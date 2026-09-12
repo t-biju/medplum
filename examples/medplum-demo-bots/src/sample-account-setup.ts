@@ -221,7 +221,6 @@ async function ensureSchedule(medplum: MedplumClient, practitioner: Practitioner
   await medplum.createResourceIfNoneExist<Schedule>(
     {
       resourceType: 'Schedule',
-      id: 'schedule',
       actor: [createReference(practitioner)],
       serviceType: [
         {

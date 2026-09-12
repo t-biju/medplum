@@ -53,7 +53,7 @@ const carouselItems = [
     title: 'Select a Doctor',
     description:
       'Lorem ipsum at porta donec ultricies ut, arcu morbi amet arcu ornare, curabitur pharetra magna tempus',
-    url: '/account/provider/choose-a-primary-care-povider',
+    url: '/account/provider',
     label: 'Choose a Primary Care Provider',
   },
   {
@@ -125,7 +125,12 @@ export function HomePage(): JSX.Element {
           <Title className={classes.heroTitle}>
             Hi <span className="text-teal-600">{profileName}</span>,<br /> we’re here to help
           </Title>
-          <Button size="xl" radius="xl" className={classes.heroButton}>
+          <Button
+            size="xl"
+            radius="xl"
+            className={classes.heroButton}
+            onClick={() => navigate('/get-care')?.catch(console.error)}
+          >
             Get Care
           </Button>
         </Container>
@@ -134,7 +139,7 @@ export function HomePage(): JSX.Element {
         <Group justify="center">
           <IconGift />
           <p>Put calls to action here</p>
-          <Button variant="white" onClick={() => navigate('/messages')?.catch(console.error)}>
+          <Button variant="white" onClick={() => navigate('/Communication')?.catch(console.error)}>
             Send Message
           </Button>
         </Group>
